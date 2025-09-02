@@ -1,0 +1,46 @@
+[
+  {
+    "number": 1,
+    "symbol": "H",
+    "name": "Hydrogen",
+    "atomic_mass": 1.008,
+    "group": 1,
+    "period": 1,
+    "category": "nonmetal",
+    "state": "gas",
+    "electrons": 1
+  },
+  {
+    "number": 2,
+    "symbol": "He",
+    "name": "Helium",
+    "atomic_mass": 4.0026,
+    "group": 18,
+    "period": 1,
+    "category": "noble gas",
+    "state": "gas",
+    "electrons": 2
+  },
+  {
+    "number": 6,
+    "symbol": "C",
+    "name": "Carbon",
+    "atomic_mass": 12.011,
+    "group": 14,
+    "period": 2,
+    "category": "nonmetal",
+    "state": "solid",
+    "electrons": 6
+  },
+  {
+    "number": 8,
+    "symbol": "O",
+    "name": "Oxygen",
+    "atomic_mass": 15.999,
+    "group": 16,
+    "period": 2,
+    "category": "nonmetal",
+    "state": "gas",
+    "electrons": 8
+  }
+]
