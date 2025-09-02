@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Periodic Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Periodic Table of Elements</h1>
+    <div id="search-bar">
+      <input type="text" id="search-input" placeholder="Search by name or symbol..." aria-label="Search by name or symbol">
+      <select id="group-filter" aria-label="Filter by group">
+        <option value="">All Groups</option>
+      </select>
+      <select id="state-filter" aria-label="Filter by state">
+        <option value="">All States</option>
+        <option value="solid">Solid</option>
+        <option value="liquid">Liquid</option>
+        <option value="gas">Gas</option>
+      </select>
+    </div>
+  </header>
+  <main>
+    <section id="periodic-table" role="grid" aria-label="Periodic Table">
+    </section>
+  </main>
+  <div id="modal" aria-modal="true" role="dialog" tabindex="-1" hidden>
+    <div id="modal-content">
+      <button id="close-modal" aria-label="Close panel">&times;</button>
+      <div id="element-details">
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

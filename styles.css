@@ -1,0 +1,219 @@
+:root {
+  --background: #181a20;
+  --surface: #23262f;
+  --primary: #3b82f6;
+  --secondary: #a1a1aa;
+  --accent: #fbbf24;
+  --border: #2d3035;
+  --focus: #fbbf24;
+  --font: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: #f3f4f6;
+  margin: 0;
+  font-family: var(--font);
+}
+
+header {
+  padding: 1rem 2vw;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+#search-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#search-bar input,
+#search-bar select {
+  background: var(--background);
+  color: #f3f4f6;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#search-bar input:focus,
+#search-bar select:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+main {
+  padding: 2vw;
+}
+
+#periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(2.5rem, 1fr));
+  gap: 0.4rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+the.element {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.35rem 0.2rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  min-height: 3.5rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.element:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 2px var(--focus);
+  z-index: 2;
+}
+
+.element .atomic-number {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+
+.element .symbol {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 1.2rem;
+}
+
+.element .name {
+  font-size: 0.7rem;
+  color: var(--secondary);
+}
+
+#modal[aria-modal="true"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 23, 31, 0.88);
+  z-index: 100;
+}
+
+#modal[hidden] {
+  display: none !important;
+}
+
+#modal-content {
+  background: var(--surface);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 95vw;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 4px 32px #000a;
+  outline: none;
+}
+
+#close-modal {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.7rem;
+  cursor: pointer;
+  outline: none;
+}
+
+#close-modal:focus {
+  color: var(--primary);
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+#element-details {
+  margin-top: 0.5rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 1rem;
+  font-size: 0.98rem;
+}
+
+.details-grid dt {
+  color: var(--secondary);
+}
+
+details-grid dd {
+  margin: 0 0 0.3rem 0;
+}
+
+.particle-model {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.particle-svg {
+  width: 130px;
+  height: 130px;
+  background: var(--background);
+  border-radius: 50%;
+  box-shadow: 0 0 5px #000a;
+}
+
+.element:focus-visible,
+#close-modal:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  #periodic-table {
+    grid-template-columns: repeat(9, minmax(2.3rem, 1fr));
+    gap: 0.3rem;
+  }
+  #modal-content {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #periodic-table {
+    grid-template-columns: repeat(5, minmax(2rem, 1fr));
+  }
+  .element {
+    min-height: 3rem;
+    font-size: 0.93rem;
+  }
+  #modal-content {
+    padding: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar {
+  background: var(--surface);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
